@@ -1,0 +1,15 @@
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+var server = require("./server");
+var router = require("./router");
+var requestHandlers = require("./requestHandlers");
+
+var handle ={}
+handle["/"]= requestHandlers.start;
+handle["/start"]= requestHandlers.start;
+handle["/upload"]= requestHandlers.upload;
+
+server.start(router.route, handle);
